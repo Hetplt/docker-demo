@@ -1,0 +1,13 @@
+services:
+
+  website:
+
+    image: nginx
+
+    container_name: custom-nginx
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./website:/usr/share/nginx/html

@@ -1,0 +1,14 @@
+# Stage 1 - Build
+FROM python:3.11 AS builder
+WORKDIR /app
+RUN echo "flask" > requirements.txt
+RUN pip install --user -r requirements.txt
+
+# Stage 2 - Run (lightweight)
+FROM python:3.11-slim
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+RUN echo "from flask import Flask; app = Flask(__name__); @app.route('/'); def home(): return 'Hello!'" > app.py
+ENV PATH=/root/.local/bin:$PATH
+EXPOSE 5000
+CMD ["flask", "run", "--host=0.0.0.0"]

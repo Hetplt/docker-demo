@@ -1,0 +1,13 @@
+services:
+
+  frontend:
+    image: nginx
+    container_name: frontend-nginx
+    ports:
+      - "8080:80"
+
+  backend:
+    image: httpd
+    container_name: backend-apache
+    ports:
+      - "9090:80"

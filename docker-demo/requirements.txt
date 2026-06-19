@@ -1,0 +1,9 @@
+django
+flask
+fastapi
+numpy
+pandas
+scipy
+tensorflow
+torch
+opencv-python

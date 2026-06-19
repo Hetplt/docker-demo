@@ -1,0 +1,7 @@
+[
+  {
+    "id": "deploy-website",
+    "execute-command": "/home/savaliyahet15/website-project/deploy.sh",
+    "command-working-directory": "/home/savaliyahet15/website-project"
+  }
+]

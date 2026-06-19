@@ -1,0 +1,16 @@
+services:
+
+  flask-app:
+    build: ./app
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+
+  mysql:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: devopsdb
+    ports:
+      - "3306:3306"
